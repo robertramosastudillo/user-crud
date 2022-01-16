@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #f4f4f4;
-        font-family: sans-serif;
+        font-family: 'Roboto',sans-serif;
+        font-size: 1.6rem;
     }
 `;
 
