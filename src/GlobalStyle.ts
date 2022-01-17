@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #f4f4f4;
-        font-family: 'Roboto',sans-serif;
+        font-family: 'Poppins',sans-serif;
         font-size: 1.6rem;
     }
 `;

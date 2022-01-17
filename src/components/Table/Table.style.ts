@@ -2,35 +2,43 @@ import styled from "styled-components";
 
 export const StyledTable = styled.table`
   width: 100%;
-  border-radius: 0.4rem;
   border-collapse: collapse;
-  box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  text-align: left;
-  overflow: hidden;
   font-size: 1.4rem;
-
-  tr:nth-child(even) {
-    background-color: #f4f6fb;
-  }
+  text-align: left;
+  border: none;
 `;
 
 export const Thead = styled.thead`
-  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f3f6f9;
+  color: #464e5f;
+  border-radius: 0.6rem;
 `;
 
 export const Th = styled.th`
-    padding: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-size: 1.2rem;
-    font-weight: 900;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+
+  &:first-of-type {
+    border-radius: 0.6rem 0 0 0.6rem;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0.6rem 0.6rem 0;
+  }
 `;
 
-export const Tr = styled.tr``;
+export const Tr = styled.tr`
+  &:hover {
+    /* background-color: #f4f4f4; */
+  }
+`;
 
-export const Tbody = styled.tbody``;
+export const Tbody = styled.tbody`
+  color: #464e5f;
+  font-weight: 400;
+`;
 
 export const Td = styled.td`
-padding: 2rem;
+  padding: 1.2rem;
 `;

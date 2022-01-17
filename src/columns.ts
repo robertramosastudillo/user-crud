@@ -16,7 +16,21 @@ export const COLUMNS = [
     accessor: "email",
   },
   {
+    Header: "Country",
+    accessor: "country",
+  },
+  {
     Header: "Gender",
     accessor: "gender",
   },
+  // {
+  //   Header: "Actions",
+  //   accessor: "actions",
+  //   Cell: () => (
+  //     <div>
+  //       <div>Editar</div>
+  //       <div>Eliminar</div>
+  //     </div>
+  //   ),
+  // },
 ];

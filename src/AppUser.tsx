@@ -7,7 +7,7 @@ export const AppUser = () => {
     <>
       <GlobalStyle />
       <Container>
-        <Title>App User</Title>
+        <Title>Users</Title>
         <Table />
       </Container>
     </>
