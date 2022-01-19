@@ -11,11 +11,10 @@ export const SearchBoxContainer = styled.div`
 export const SearchBoxStyle = styled.input`
   width: 100%;
   height: 100%;
-  background-color: #fafafa;
+  background-color: #ffffff;
   border: 1px solid #b2b2b2;
   border-radius: 0.8rem;
   padding: 0rem 0.8rem 0rem 3.4rem;
-  font-family: v.$primaryFont;
   font-weight: 400;
   color: #303030;
   font-size: 14px;
