@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./device";
 
 export const Container = styled.div`
   box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.1);
@@ -7,9 +8,11 @@ export const Container = styled.div`
   width: 95%;
   margin: 6rem auto;
   padding: 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden; 
 `;
 
 export const Title = styled.h1`
-margin: 0 0 2rem 0;
-font-size: 1.8rem;
+  margin: 0 0 2rem 0;
+  font-size: 1.8rem;
 `;

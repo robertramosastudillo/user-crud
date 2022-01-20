@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../device"
 
 export const StyledTable = styled.table`
   width: 100%;
@@ -6,6 +7,11 @@ export const StyledTable = styled.table`
   font-size: 1.4rem;
   text-align: left;
   border: none;
+
+  @media ${device.mobileS} {
+    /* background-color: red; */
+    width: 100%;
+  }
 `;
 
 export const Thead = styled.thead`

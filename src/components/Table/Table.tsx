@@ -15,7 +15,7 @@ export const Table = () => {
     headerGroups,
     rows,
     prepareRow,
-    setFilter,
+    // setFilter,
   } = useTable(
     {
       columns,
@@ -26,7 +26,7 @@ export const Table = () => {
 
   return (
     <>
-      <SearchBox setFilter={setFilter} />
+      {/* <SearchBox setFilter={setFilter} /> */}
       <StyledTable {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
