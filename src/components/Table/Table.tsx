@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { StyledTable, Tbody, Td, Th, Thead, Tr } from "./Table.style";
 import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
-import { useTable, useFilters } from "react-table";
+import { useTable } from "react-table";
 import { SearchBox } from "..";
 
 export const Table = () => {
@@ -15,18 +15,16 @@ export const Table = () => {
     headerGroups,
     rows,
     prepareRow,
-    // setFilter,
   } = useTable(
     {
       columns,
       data,
     },
-    useFilters
   );
 
   return (
     <>
-      {/* <SearchBox setFilter={setFilter} /> */}
+      <SearchBox  />
       <StyledTable {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (

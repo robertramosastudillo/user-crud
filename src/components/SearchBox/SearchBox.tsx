@@ -6,12 +6,11 @@ import {
   SearchInput,
 } from "./SearchBox.style";
 
-export const SearchBox = ({ filter, setFilter }: any) => {
+export const SearchBox = () => {
   
   const el = useRef<HTMLInputElement>(null);
   const handleSearch = () => el.current!.focus();
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setFilter(e.currentTarget);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {}
 
   return (
     <SearchBoxContainer>
@@ -19,7 +18,7 @@ export const SearchBox = ({ filter, setFilter }: any) => {
         type="text"
         placeholder="Buscar"
         ref={el}
-        value={filter || ""}
+        value={""}
         onChange={handleInputChange}
       />
       <SearchInput onClick={handleSearch} />

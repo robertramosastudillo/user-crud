@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { device } from "../../device"
 import { FiSearch } from "react-icons/fi";
 
 export const SearchBoxContainer = styled.div`
   position: relative;
   height: 4rem;
-  width: 34rem;
-  margin: 0 2rem 2rem 0;
+  margin: 0 0 2rem 0;
+  width: 100%;
+ 
+  @media ${device.tablet} {
+     width: 34rem;
+  }
 `;
 
 export const SearchBoxStyle = styled.input`
