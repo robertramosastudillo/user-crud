@@ -3,28 +3,22 @@ import { StyledTable, Tbody, Td, Th, Thead, Tr } from "./Table.style";
 import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
 import { useTable } from "react-table";
-import { SearchBox } from "..";
+import { SearchBox, Button } from "..";
 
 export const Table = () => {
   const columns: any = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable(
-    {
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({
       columns,
       data,
-    },
-  );
+    });
 
   return (
     <>
-      <SearchBox  />
+      <SearchBox />
+      <Button label="Nuevo Usario"/>
       <StyledTable {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
