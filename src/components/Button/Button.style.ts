@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { device } from "../../device"
+import { device } from "../../device"
 // import { FiSearch } from "react-icons/fi";
 
 export const ButtonStyle = styled.button`
@@ -17,8 +17,11 @@ export const ButtonStyle = styled.button`
   margin: 0 0 2rem 0;
 
   &:hover {
-    background-color: darken(#FF5151, 4);
-    box-shadow: 0px 0px 16px darken(#FF5151, 4);
+    background-color: darken(#ff5151, 4);
+    box-shadow: 0px 0px 16px darken(#ff5151, 4);
   }
 
+  @media ${device.tablet} {
+    width: 20rem;
+  }
 `;
