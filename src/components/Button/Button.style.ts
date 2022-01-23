@@ -6,11 +6,12 @@ export const ButtonStyle = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 18rem; /* width: 100%; */
+  width: 14rem; /* width: 100%; */
+  min-width: 12rem;
   padding: 1rem;
   font-size: 16px;
   border-radius: 0.8rem;
-  height: 45px;
+  height: 44px;
   background-color: steelblue;
   color: white;
   outline: none;
@@ -24,7 +25,7 @@ export const ButtonStyle = styled.button`
   }
 
   @media ${device.tablet} {
-    width: 18rem;
+    width: 14rem;
   }
 `;
 
