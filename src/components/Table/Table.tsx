@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { StyledTable, Tbody, Td, Th, Thead, Tr } from "./Table.style";
+import { StyledTable, Tbody, Td, Th, Thead, Tr,OptionsMenu } from "./Table.style";
 import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
 import { useTable } from "react-table";
@@ -17,8 +17,10 @@ export const Table = () => {
 
   return (
     <>
+    <OptionsMenu>
       <SearchBox />
-      <Button label="Nuevo Usuario"/>
+      <Button label="New User"/>
+      </OptionsMenu>
       <StyledTable {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (

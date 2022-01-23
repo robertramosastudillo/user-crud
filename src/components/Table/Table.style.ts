@@ -7,8 +7,6 @@ export const StyledTable = styled.table`
   font-size: 1.4rem;
   text-align: left;
   border: none;
-
-
 `;
 
 export const Thead = styled.thead`
@@ -44,4 +42,11 @@ export const Tbody = styled.tbody`
 
 export const Td = styled.td`
   padding: 1.2rem;
+`;
+
+export const OptionsMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 `;
