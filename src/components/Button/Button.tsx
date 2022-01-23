@@ -1,6 +1,11 @@
 import React from "react";
-import { ButtonStyle } from "./Button.style";
+import { ButtonStyle, Icon } from "./Button.style";
 
 export const Button = ({ label }: any) => {
-  return <ButtonStyle>{label}</ButtonStyle>;
+  return (
+    <ButtonStyle>
+      <Icon />
+      {label}
+    </ButtonStyle>
+  );
 };

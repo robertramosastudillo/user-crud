@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { device } from "../../device";
-// import { FiSearch } from "react-icons/fi";
+import { GoPlus } from "react-icons/go";
 
 export const ButtonStyle = styled.button`
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 18rem; /* width: 100%; */
   padding: 1rem;
   font-size: 16px;
   border-radius: 0.8rem;
   height: 45px;
-  font-weight: bold;
   background-color: steelblue;
   color: white;
   outline: none;
@@ -22,6 +24,11 @@ export const ButtonStyle = styled.button`
   }
 
   @media ${device.tablet} {
-    width: 20rem;
+    width: 18rem;
   }
+`;
+
+export const Icon = styled(GoPlus)`
+  height: 1.8rem;
+  width: 1.8rem;
 `;

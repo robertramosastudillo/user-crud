@@ -18,7 +18,7 @@ export const Table = () => {
   return (
     <>
       <SearchBox />
-      <Button label="Nuevo Usario"/>
+      <Button label="Nuevo Usuario"/>
       <StyledTable {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
