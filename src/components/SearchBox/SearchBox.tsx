@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useAsyncDebounce } from "react-table";
 
 import {
   SearchBoxContainer,
@@ -6,11 +7,13 @@ import {
   SearchInput,
 } from "./SearchBox.style";
 
-export const SearchBox = () => {
-  
+export const SearchBox = ({ filter, setFilter }: any) => {
   const el = useRef<HTMLInputElement>(null);
   const handleSearch = () => el.current!.focus();
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {}
+  const [value, setValue] = useState(filter);
+  const onChange = useAsyncDebounce((value: string) => {
+    setFilter(value || undefined);
+  }, 1000);
 
   return (
     <SearchBoxContainer>
@@ -18,8 +21,11 @@ export const SearchBox = () => {
         type="text"
         placeholder="Buscar"
         ref={el}
-        value={""}
-        onChange={handleInputChange}
+        value={value || ""}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
       />
       <SearchInput onClick={handleSearch} />
     </SearchBoxContainer>
