@@ -1,4 +1,5 @@
+import { ModalStyle } from "./Modal.style";
 
 export const Modal = () => {
-  return <div>Modal</div>;
+  return <ModalStyle>Modal</ModalStyle>;
 };
