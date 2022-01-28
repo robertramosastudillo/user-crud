@@ -1,15 +1,24 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { getUsers } from "./userAction";
 import { initialState } from "./userState";
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {
-    collapsedMenu: (state, { payload }: PayloadAction) => {
-      state.isCollapsed = !state.isCollapsed;
+  reducers: {},
+  extraReducers: {
+    [getUsers.pending.type]: (state) => {
+      state.isLoading = true;
+    },
+    [getUsers.fulfilled.type]: (state, { payload }) => {
+      state.isLoading = false;
+        state.users = payload;
+    },
+    [getUsers.rejected.type]: (state) => {
+      state.isLoading = false;
     },
   },
 });
 
-export const { collapsedMenu } = userSlice.actions;
+// export const { getUsers } = userSlice.actions;
 export default userSlice.reducer;

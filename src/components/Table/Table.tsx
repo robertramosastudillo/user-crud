@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import {
   StyledTable,
   Tbody,
@@ -12,10 +12,22 @@ import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
 import { useTable, useGlobalFilter } from "react-table";
 import { SearchBox, Button } from "..";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from '../../features/user/userAction';
+import { userSelector } from '../../features/user/userSelector';
 
 export const Table = () => {
+  const dispatch = useDispatch()
   const columns: any = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
+
+
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [])
+
+  const { users } = useSelector(userSelector);
+  console.log(users);
 
   const {
     getTableProps,

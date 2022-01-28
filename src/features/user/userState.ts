@@ -1,7 +1,11 @@
 export interface IUserState {
-    isCollapsed: boolean;
-  }
-  
-  export const initialState: IUserState = {
-    isCollapsed: false,
-  };
+  users: [];
+  isLoading: boolean;
+  error: string;
+}
+
+export const initialState: IUserState = {
+  users: [],
+  isLoading: false,
+  error: "",
+};
