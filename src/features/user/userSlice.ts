@@ -12,7 +12,7 @@ export const userSlice = createSlice({
     },
     [getUsers.fulfilled.type]: (state, { payload }) => {
       state.isLoading = false;
-        state.users = payload;
+        state.users = payload.users;
     },
     [getUsers.rejected.type]: (state) => {
       state.isLoading = false;

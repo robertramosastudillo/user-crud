@@ -8,26 +8,25 @@ import {
   Tr,
   OptionsMenu,
 } from "./Table.style";
-import MOCK_DATA from "../../MOCK_DATA.json";
+// import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
 import { useTable, useGlobalFilter } from "react-table";
 import { SearchBox, Button } from "..";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from '../../features/user/userAction';
-import { userSelector } from '../../features/user/userSelector';
+import { getUsers } from "../../features/user/userAction";
+import { userSelector } from "../../features/user/userSelector";
 
 export const Table = () => {
-  const dispatch = useDispatch()
-  const columns: any = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => MOCK_DATA, []);
+  const dispatch = useDispatch();
 
+  const { users: data } = useSelector(userSelector);
+  const columns: any = useMemo(() => COLUMNS, []);
 
   useEffect(() => {
-    dispatch(getUsers())
-  }, [])
+    dispatch(getUsers());
+  }, [dispatch]);
 
-  const { users } = useSelector(userSelector);
-  console.log(users);
+  console.log(data);
 
   const {
     getTableProps,
