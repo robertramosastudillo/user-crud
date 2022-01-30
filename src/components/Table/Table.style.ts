@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
+
 // import { device } from "../../device"
 
 export const StyledTable = styled.table`
@@ -49,4 +51,65 @@ export const OptionsMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+`;
+
+// Paginations Options
+
+export const PaginationOptions = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const FirstAndLastPage = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border: none;
+  background-color: #f3f6f9;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  color: #464e5f;
+  cursor: pointer;
+  &:hover {
+    background-color: #d3d3d3;
+  }
+`;
+
+export const FirstPageIcon = styled(BsArrowBarLeft)`
+  height: 2rem;
+  width: 2rem;
+  color: #464e5f;
+`;
+
+export const LastPageIcon = styled(BsArrowBarRight)`
+  height: 2rem;
+  width: 2rem;
+  color: #464e5f;
+`;
+
+export const TextPage = styled.span`
+  color: #464e5f;
+`;
+
+export const SearchBoxPageStyle = styled.input`
+  width: 100%;
+  height: 3.2rem;
+  background-color: #ffffff;
+  border: 1px solid #b2b2b2;
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 400;
+  color: #303030;
+  font-size: 14px;
+  outline: none;
+  text-align: center;
+
+  &::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;

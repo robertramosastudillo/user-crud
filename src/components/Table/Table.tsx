@@ -7,6 +7,12 @@ import {
   Thead,
   Tr,
   OptionsMenu,
+  PaginationOptions,
+  FirstAndLastPage,
+  FirstPageIcon,
+  LastPageIcon,
+  TextPage,
+  SearchBoxPageStyle,
 } from "./Table.style";
 // import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
@@ -32,7 +38,7 @@ export const Table = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    // rows,
     prepareRow,
     setGlobalFilter,
     state: { globalFilter, pageIndex, pageSize },
@@ -49,7 +55,7 @@ export const Table = () => {
     {
       columns,
       data,
-      initialState: { pageIndex: 2 },
+      initialState: { pageIndex: 0 },
     },
     useGlobalFilter,
     usePagination
@@ -86,28 +92,37 @@ export const Table = () => {
           })}
         </Tbody>
       </StyledTable>
-      <div>
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {"<<"}
-        </button>{" "}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+      <PaginationOptions>
+        <FirstAndLastPage
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
+          <FirstPageIcon />
+        </FirstAndLastPage>{" "}
+        <FirstAndLastPage
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
           Previous
-        </button>{" "}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        </FirstAndLastPage>{" "}
+        <FirstAndLastPage onClick={() => nextPage()} disabled={!canNextPage}>
           Next
-        </button>{" "}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {">>"}
-        </button>{" "}
-        <span>
+        </FirstAndLastPage>{" "}
+        <FirstAndLastPage
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
+          <LastPageIcon />
+        </FirstAndLastPage>{" "}
+        <TextPage>
           Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
           </strong>{" "}
-        </span>
+        </TextPage>
         <span>
           | Go to page:{" "}
-          <input
+          <SearchBoxPageStyle
             type="number"
             defaultValue={pageIndex + 1}
             onChange={(e) => {
@@ -116,10 +131,10 @@ export const Table = () => {
                 : 0;
               gotoPage(pageNumber);
             }}
-            style={{ width: "50px" }}
+            style={{ width: "60px" }}
           />
-        </span>{" "}
-        <select
+        </span>
+        {/* <select
           value={pageSize}
           onChange={(e) => setPageSize(Number(e.target.value))}
         >
@@ -128,8 +143,8 @@ export const Table = () => {
               Show {pageSize}
             </option>
           ))}
-        </select>
-      </div>
+        </select> */}
+      </PaginationOptions>
     </>
   );
 };
