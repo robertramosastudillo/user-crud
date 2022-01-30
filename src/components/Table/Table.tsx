@@ -13,6 +13,7 @@ import {
   LastPageIcon,
   TextPage,
   SearchBoxPageStyle,
+  TextPageStrong,
 } from "./Table.style";
 // import MOCK_DATA from "../../MOCK_DATA.json";
 import { COLUMNS } from "../../columns";
@@ -21,6 +22,7 @@ import { SearchBox, Button } from "..";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../features/user/userAction";
 import { userSelector } from "../../features/user/userSelector";
+import { GoToPageStyle } from "./Table.style";
 
 export const Table = () => {
   const dispatch = useDispatch();
@@ -115,13 +117,13 @@ export const Table = () => {
           <LastPageIcon />
         </FirstAndLastPage>{" "}
         <TextPage>
-          Page{" "}
-          <strong>
+          Page {"  "}
+          <TextPageStrong>
             {pageIndex + 1} of {pageOptions.length}
-          </strong>{" "}
+          </TextPageStrong>
         </TextPage>
-        <span>
-          | Go to page:{" "}
+        <GoToPageStyle>
+          | Go to page:
           <SearchBoxPageStyle
             type="number"
             defaultValue={pageIndex + 1}
@@ -133,7 +135,7 @@ export const Table = () => {
             }}
             style={{ width: "60px" }}
           />
-        </span>
+        </GoToPageStyle>
         {/* <select
           value={pageSize}
           onChange={(e) => setPageSize(Number(e.target.value))}

@@ -91,6 +91,23 @@ export const LastPageIcon = styled(BsArrowBarRight)`
 `;
 
 export const TextPage = styled.span`
+  display: flex;
+  flex-direction: row;
+  color: #464e5f;
+`;
+
+export const TextPageStrong = styled.strong`
+  display: flex;
+  flex-direction: row;
+  min-width: 4.2rem;
+  margin: 0 0 0 .4rem;
+`;
+
+export const GoToPageStyle = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 16.6rem;
   color: #464e5f;
 `;
 
@@ -106,6 +123,7 @@ export const SearchBoxPageStyle = styled.input`
   font-size: 14px;
   outline: none;
   text-align: center;
+  margin: 0 0 0 .4rem;
 
   &::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
